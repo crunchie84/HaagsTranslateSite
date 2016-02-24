@@ -2,11 +2,14 @@
 
 @using (Html.BeginForm())
 {
+	<h2>Nederlands</h2>
 	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands"})
-	<input type="submit" value="vertaal"/>
+	<button type="submit" class="button">Vertaal</button>
+
 
 	if (!string.IsNullOrEmpty(Model.Result))
 	{
+		<h2>Haags</h2>
 		<textarea>@Model.Result</textarea>
 	}
 }

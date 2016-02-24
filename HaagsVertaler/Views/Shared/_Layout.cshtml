@@ -4,6 +4,8 @@
 	<title>Vertaal Nederlands naar het Haags</title>
 	<meta name="description" content="Vertaal je tekst van het Nederlands naar het Haags">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<style>
@@ -12,7 +14,7 @@
 		}
 
 		body {
-			background: #dedede;
+			background: #C7C49F;
 			font-family: 'Lato', Arial, sans-serif;
 			margin: 0;
 		}
@@ -25,9 +27,24 @@
 			text-align: center;
 		}
 
+		img {
+			margin-top: 20px;
+			width: 250px;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 30px;
+		}
+
+		h2 {
+			margin-bottom: 5px;
+			font-size: 20px;
+		}
+
 		textarea {
 			background: #FFF;
-			margin: 0em;
+			margin: 0 0 10px;
 			-webkit-appearance: none;
 			tap-highlight-color: rgba(255, 255, 255, 0);
 			padding: 0.78571429em 1em;
@@ -35,6 +52,7 @@
 			border: 1px solid rgba(34, 36, 38, 0.15);
 			outline: none;
 			color: rgba(0, 0, 0, 0.87);
+			min-height: 200px;
 			border-radius: 0.28571429rem;
 			box-shadow: 0em 0em 0em 0em transparent inset;
 			-webkit-transition: color 0.1s ease, border-color 0.1s ease;
@@ -45,36 +63,65 @@
 			width: 100%;
 		}
 
-			textarea:not([rows]) {
-				height: 12em;
-				min-height: 8em;
-				max-height: 24em;
-			}
-
-			textarea:focus {
-				color: rgba(0, 0, 0, 0.95);
-				border-color: #85B7D9;
-				border-radius: 0.28571429rem;
-				background: #FFFFFF;
-				box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
-				-webkit-appearance: none;
-			}
+		textarea:focus {
+			color: rgba(0, 0, 0, 0.95);
+			border-color: #85B7D9;
+			box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
+		}
 
 		svg {
 			width: 40px;
 			fill: #FFF;
 		}
+
+		.button {
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: none;
+    border: none;
+    vertical-align: baseline;
+    background: #0D7E5D;
+    color: #FFF;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    margin: 0 0 20px 0;
+    padding: 0.78571429em 1.5em 0.78571429em;
+    text-transform: none;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    border-radius: 0.28571429rem;
+    box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+    -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+	color: #0D7E5D;
+}
+a:hover {
+	text-decoration: none;
+}
+.button:hover {
+  background-color: #229C79;
+  box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
 	</style>
 </head>
 
 <body>
 	<div class="wrapper">
-		<h1>Vertaal Nederlands naar het Haags</h1>
+		<img src="logo.png" alt="" />
+		<h1>Vertaal naar het Haags</h1>
 
 		@RenderBody()
 
 		<p>
-			Ontwikkeld speciaal voor <a href="http://denhaag.com/dh">de Haagse versie van DenHaag.com</a> ter ere van de onthulling van het standbeeld van Haagse Harry op de Grote Markt in Den Haag. Speciale dank aan Den Haag Marketing, Marnix Rueb, Robert-Jan Rueb & Sjaak Bral.
+			-
+			<br /><br />
+			Ontwikkeld speciaal voor <a href="http://denhaag.com/dh">de Haagse versie van DenHaag.com</a> ter ere van de onthulling van het standbeeld van Haagse Harry op de Grote Markt in Den Haag. <br />
+			Speciale dank aan Den Haag Marketing, Marnix Rueb, Robert-Jan Rueb & Sjaak Bral.
 		</p>
 
 		<a href="http://q42.nl">
