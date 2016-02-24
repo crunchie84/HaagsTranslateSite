@@ -1,0 +1,13 @@
+﻿@model HaagsVertaler.Models.TranslationViewModel
+
+@using (Html.BeginForm())
+{
+	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands"})
+	<input type="submit" value="vertaal"/>
+
+	if (!string.IsNullOrEmpty(Model.Result))
+	{
+		<textarea>@Model.Result</textarea>
+	}
+}
+
