@@ -97,6 +97,7 @@
     <Content Include="favicon-32x32.png" />
     <Content Include="Global.asax" />
     <Content Include="logo.png" />
+    <Content Include="share.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
