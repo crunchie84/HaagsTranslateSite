@@ -21,5 +21,20 @@ namespace HaagsVertaler.Controllers
 
       return View("Home", vm);
     }
+
+    [HttpGet]
+    [Route("~/api")]
+    public JsonResult TranslateApi(string text)
+    {
+      return new JsonNetResult
+      {
+        JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+        Data = new TranslationViewModel
+        {
+          Source = text,
+          Result = string.IsNullOrEmpty(text) ? null : HaagsTranslator.Translator.Translate(text)
+        }
+      };
+    }
   }
 }
