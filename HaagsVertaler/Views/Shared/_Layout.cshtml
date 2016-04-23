@@ -2,17 +2,18 @@
 <html>
 <head>
 	<title>Vertaal Nederlands naar het Haags</title>
-	<meta name="description" content="Vertaal je tekst van het Nederlands naar het Haags">
+	<meta name="description" content="Voor als je Nederlands naar het Haags wil vertalen, of gewoon Haags wil leren praten zoals Harry">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-	<meta property="og:title" content="Vertaal naar het Haags" />
+	<meta property="og:title" content="Vertaal Nederlands naar het Haags" />
 	<meta property="og:site_name" content="Haags.nu" />
-    <meta property="og:description" content="Vetaal jâh tekste vannut Neidâhlans naah ut Haags" />
+	<meta property="og:description" content="Wil je Haags leren praten zoals Harry? Vetaal jâh tekste vannut Neidâhlans naah ut Haags!" />
 	<meta property="og:url" content="http://haags.nu" />
 	<meta property="og:image" content="http://haags.nu/share.png" />
 	<meta name="twitter:image:src" content="http://haags.nu/share.png" />
 
+	<link href='https://fonts.googleapis.com/css?family=Lora:700,400italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<style>
 		* {
@@ -38,29 +39,39 @@
 			width: 250px;
 		}
 
+
 		h1 {
 			margin: 0;
 			font-size: 30px;
+			font-family: 'Lora';
 		}
 
 		h2 {
+			font-family: 'Lora';
 			margin-bottom: 5px;
 			font-size: 20px;
+		}
+
+		span {
+			font-family: 'Lora';
+			font-weight: 400;
+			font-style: italic;
+		}
+
+		p {
+			line-height: 1.4;
+			margin: 0;
 		}
 
 		textarea {
 			background: #FFF;
 			margin: 0 0 10px;
 			-webkit-appearance: none;
-			tap-highlight-color: rgba(255, 255, 255, 0);
 			padding: 0.78571429em 1em;
-			background: #FFFFFF;
 			border: 1px solid rgba(34, 36, 38, 0.15);
-			outline: none;
 			color: rgba(0, 0, 0, 0.87);
 			min-height: 200px;
-			border-radius: 0.28571429rem;
-			box-shadow: 0em 0em 0em 0em transparent inset;
+			border-radius: 4px;
 			-webkit-transition: color 0.1s ease, border-color 0.1s ease;
 			transition: color 0.1s ease, border-color 0.1s ease;
 			font-size: 1em;
@@ -69,11 +80,10 @@
 			width: 100%;
 		}
 
-		textarea:focus {
-			color: rgba(0, 0, 0, 0.95);
-			border-color: #85B7D9;
-			box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
-		}
+			textarea:focus {
+				color: rgba(0, 0, 0, 0.95);
+				border-color: #85B7D9;
+			}
 
 		svg {
 			width: 40px;
@@ -81,78 +91,122 @@
 		}
 
 		.button {
-	cursor: pointer;
-	display: inline-block;
-	min-height: 1em;
-	outline: none;
-	border: none;
-	vertical-align: baseline;
-	background: #0D7E5D;
-	color: #FFF;
-	font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-	margin: 0 0 20px 0;
-	padding: 0.78571429em 1.5em 0.78571429em;
-	text-transform: none;
-	line-height: 1em;
-	font-style: normal;
-	text-align: center;
-	border-radius: 0.28571429rem;
-	box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
-	-webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
-	transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
-	-webkit-tap-highlight-color: transparent;
-}
+			cursor: pointer;
+			display: inline-block;
+			outline: none;
+			border: none;
+			font-size: 16px;
+			vertical-align: baseline;
+			background: #0D7E5D;
+			color: #FFF;
+			font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+			margin: 0 0 20px 0;
+			padding: 0 20px;
+			line-height: 44px;
+			font-style: normal;
+			text-align: center;
+			border-radius: 4px;
+			-webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+			transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+		}
 
-a {
-	color: #0D7E5D;
-}
-a:hover {
-	text-decoration: none;
-}
-.button:hover {
-  background-color: #229C79;
-  box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
-}
+		a {
+			color: #0D7E5D;
+		}
+
+			a:hover {
+				text-decoration: none;
+			}
+
+		.button:hover {
+			background-color: #229C79;
+			box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+		}
+
+		.totstandkoming {
+			background: rgba(255,255,255,.2);
+			margin-top: 100px;
+			padding: 20px;
+			text-align: left;
+		}
+			.totstandkoming h1 {
+				font-size: 18px;
+				line-height: 1.4;
+				margin-bottom: 0;
+			}
+
+			.totstandkoming p + p {
+				margin-top: 22px;
+			}
+
+			nav {
+				margin-top: 40px;
+			}
+
+			footer {
+				margin-bottom: 30px;
+				margin-top: 30px;
+			}
+		footer p {
+			font-size: 14px;
+			margin-top: 10px;
+		}
 	</style>
 </head>
 
 <body>
 	<div class="wrapper">
-		<img src="logo.png" alt="" />
-		<h1>Vertaal naar het Haags</h1>
+		<img src="logo.png" alt="Logo van Haagse vertaalmachine" />
+		<h1>Vertaal Nederlands naar het Haags</h1>
+		<span>Vetaal Neidâhlans naah ut Haags</span>
 
 		@RenderBody()
 
-		<p>
-			-
-			<br /><br />
-			Ontwikkeld speciaal voor <a href="http://denhaag.com/dh">de Haagse versie van DenHaag.com</a> ter ere van de onthulling van het standbeeld van Haagse Harry op de Grote Markt in Den Haag. <br />
-			Speciale dank aan Den Haag Marketing, Marnix Rueb, Robert-Jan Rueb & Sjaak Bral.
-		</p>
+		<section class="totstandkoming">
+			<h1>Hoe is deze Haagse Vertaalmachine tot stand gekomen?</h1>
+			<p>
+				Ter ere van de onthulling van het Haagse Harry-standbeeld op de Grote Markt in Den Haag hebben wij (webdevelopers) een zesde taalkeuze toegevoegd aan DenHaag.com: het Haagse dialect. Nog steeds kun je op <a href="http://denhaag.com/dh">DenHaag.com in het Haags</a> lezen wat voor leuks er deze week weer te doen is in de stad!
+			</p>
+			<p>
+				Speciale dank aan Den Haag Marketing en aan Robert-Jan Rueb & Sjaak Bral voor de spellingscontrole en support op deze Haagse vertaling.
+			</p>
+		</section>
 
-		<a href="http://q42.nl">
-			<svg version="1.1" viewBox="0 0 10 16">
-				<path d="M3,8.3h0.8c0-0.5,0-0.9,0-1h0L3,8.3z" />
-				<path d="M5,2.8c-0.5,0-1.3,0.3-1.3,1.3c0,1,0.8,1.3,1.3,1.3c0.2,0,0.4,0,0.6-0.1L5,5l0.5-0.4l0.5,0.4
+		<nav>
+			<a href="mailto:roelfjan@q42.nl">Suggesties?</a>
+		</nav>
+
+		<footer>
+			<a href="http://q42.nl">
+				<svg version="1.1" viewBox="0 0 10 16">
+					<path d="M3,8.3h0.8c0-0.5,0-0.9,0-1h0L3,8.3z" />
+					<path d="M5,2.8c-0.5,0-1.3,0.3-1.3,1.3c0,1,0.8,1.3,1.3,1.3c0.2,0,0.4,0,0.6-0.1L5,5l0.5-0.4l0.5,0.4
 		c0.1-0.2,0.2-0.4,0.2-0.8C6.3,3.1,5.5,2.8,5,2.8z" />
-				<path d="M10,5.4C10,4,9.5,2.9,8.5,1.9c-1-1-2.2-1.5-3.5-1.4C3.6,0.4,2.4,1,1.4,2C0.5,3,0,4.2,0,5.6
+					<path d="M10,5.4C10,4,9.5,2.9,8.5,1.9c-1-1-2.2-1.5-3.5-1.4C3.6,0.4,2.4,1,1.4,2C0.5,3,0,4.2,0,5.6
 		c0,1.3,0.6,2.5,1.7,3.8l0.4,0.4c0.9,1,1.5,1.9,1.9,2.7c0.4,0.8,0.8,2,1.2,3.4c0.3-1.4,0.6-2.6,1-3.4c0.4-0.8,1-1.8,1.8-2.8l0.4-0.4
 		C9.5,8,10,6.7,10,5.4z M4.8,8.6L4.8,8.6H4.5v0.5H3.8V8.6H2.5V8.2l1.2-1.4h0.7v1.4h0.4V8.6z M2.6,4.1c0-1.7,1.7-1.9,2.3-1.9
 		c0.6,0,2.3,0.2,2.3,1.9c0,0.6-0.2,1-0.5,1.3l0.5,0.4L6.8,6.2L6.2,5.8C5.7,6,5.2,6.1,5,6.1C4.3,6.1,2.6,5.8,2.6,4.1z M7.4,9.1H5.1
 		c0-0.3,0.1-0.5,0.8-0.9c0.6-0.3,0.8-0.4,0.8-0.7c0-0.1-0.1-0.3-0.5-0.3c-0.5,0-0.5,0.3-0.5,0.4H5.2c0-0.7,0.8-0.8,1.1-0.8
 		c0.6,0,1.1,0.3,1.1,0.7c0,0.4-0.4,0.6-0.7,0.7C6.3,8.5,6,8.6,6,8.7h1.4V9.1z" />
-			</svg>
-		</a>
+				</svg>
+			</a>
+
+			<p>
+				Gemaakt door <a href="https://twitter.com/markvanstraten">@@markvanstraten</a> en <a href="https://twitter.com/roelfjandevries">@@roelfjandevries</a>.
+			</p>
+		</footer>
 	</div>
 
 	<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-	ga('create', 'UA-74264850-1', 'auto');
-	ga('send', 'pageview');
+		ga('create', 'UA-74264850-1', 'auto');
+		ga('send', 'pageview');
 
 	</script>
 </body>

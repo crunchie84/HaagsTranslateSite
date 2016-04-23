@@ -3,13 +3,13 @@
 @using (Html.BeginForm())
 {
 	<h2>Nederlands</h2>
-	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands"})
-	<button type="submit" class="button">Vertaal</button>
+	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true})
+	<button type="submit" class="button">Vertaal naar het Haags</button>
 
 
 	if (!string.IsNullOrEmpty(Model.Result))
 	{
-		<h2>Haags</h2>
+		<h2>De Haagse vertaling</h2>
 		<textarea>@Model.Result</textarea>
 	}
 }
