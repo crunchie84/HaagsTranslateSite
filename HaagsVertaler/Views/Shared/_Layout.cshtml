@@ -90,8 +90,25 @@
 			fill: #FFF;
 		}
 
-		.button {
+		.form-header {
+			position: relative;
+		}
+
+		.form-header button {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background: transparent;
+			border: 0;
+			color: #4a4a4a;
+			font-size: 12px;
+		}
+
+		button {
 			cursor: pointer;
+		}
+
+		.button {
 			display: inline-block;
 			outline: none;
 			border: none;
@@ -196,6 +213,14 @@
 			</p>
 		</footer>
 	</div>
+
+	<script>
+		document.querySelector('.js-wis-tekst').addEventListener('click', function () {
+			var textarea = document.querySelector('.js-nederlands');
+			textarea.value = '';
+			textarea.focus();
+		});
+	</script>
 
 	<script>
 		(function (i, s, o, g, r, a, m) {

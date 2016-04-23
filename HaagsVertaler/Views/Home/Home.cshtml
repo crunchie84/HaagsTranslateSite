@@ -2,8 +2,12 @@
 
 @using (Html.BeginForm())
 {
-	<h2>Nederlands</h2>
-	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true})
+	<div class="form-header">
+		<h2>Nederlands</h2>
+		<button type="button" class="js-wis-tekst">Wis tekst</button>
+	</div>
+
+	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true, @class = "js-nederlands" })
 	<button type="submit" class="button">Vertaal naar het Haags</button>
 
 
