@@ -13,9 +13,38 @@
 	<meta property="og:image" content="http://haags.nu/share.png" />
 	<meta name="twitter:image:src" content="http://haags.nu/share.png" />
 
-	<link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
-	<link rel="preconnect" href="https://fonts.gstatic.com/" />
+	<link rel="preload" href="http://haags.nu/Lora700.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="http://haags.nu/Lora400.woff2" as="font" type="font/woff2" crossorigin>
+	
+	<style>
+		@@font-face {
+			font-family: 'Lora';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url('http://haags.nu/LoraItalic.woff2') format('woff2'),
+			     url('http://haags.nu/LoraItalic.woff') format('woff');
+		}
 
+		@@font-face {
+			font-family: 'Lora';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url('http://haags.nu/Lora700.woff2') format('woff2'),
+			     url('http://haags.nu/Lora700.woff') format('woff');
+		}
+
+		@@font-face {
+			font-family: 'Lato';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url('http://haags.nu/Lora400.woff2') format('woff2'),
+			     url('http://haags.nu/Lora400.woff') format('woff');
+		}
+	</style>
+		
 	<style>@Html.Raw(File.ReadAllText(Server.MapPath("site.min.css")));</style>
 </head>
 
