@@ -1,0 +1,14 @@
+{
+	"name": "Haags",
+	"short_name": "Haags",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "\/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image\/png"
+		}
+	],
+	"background_color": "#c7c49f",
+	"theme_color": "#c7c49f"
+}

@@ -7,14 +7,14 @@
 		<button type="button" class="js-wis-tekst">Wis tekst</button>
 	</div>
 
-	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true, @class = "js-nederlands" })
+	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true, @class = "js-nederlands", aria_label = "Nederlandse tekst" })
 	<button type="submit" class="button">Naar Haags vertalen</button>
 
 
 	if (!string.IsNullOrEmpty(Model.Result))
 	{
 		<h2>De Haagse vertaling</h2>
-		<textarea>@Model.Result</textarea>
+		<textarea aria-label="Haagse tekst">@Model.Result</textarea>
 	}
 }
 

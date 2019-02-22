@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,11 +98,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android-chrome-192x192.png" />
+    <Content Include="apple-touch-icon.png" />
+    <Content Include="browserconfig.xml" />
     <Content Include="favicon-16x16.png" />
     <Content Include="favicon-32x32.png" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Gruntfile.js" />
     <Content Include="logo.png" />
+    <Content Include="mstile-150x150.png" />
     <Content Include="share.png" />
     <Content Include="site.min.css" />
     <Content Include="Web.config" />
@@ -123,6 +129,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="package.json" />
+    <Content Include="Lora400.woff" />
+    <Content Include="Lora400.woff2" />
+    <Content Include="Lora700.woff" />
+    <Content Include="Lora700.woff2" />
+    <Content Include="LoraItalic.woff" />
+    <Content Include="LoraItalic.woff2" />
+    <Content Include="manifest.json" />
+    <Content Include="safari-pinned-tab.svg" />
     <None Include="Statics\site.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
