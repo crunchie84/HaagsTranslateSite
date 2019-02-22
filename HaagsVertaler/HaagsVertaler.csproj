@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -123,6 +124,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="package.json" />
+    <Content Include="Lora400.woff" />
+    <Content Include="Lora400.woff2" />
+    <Content Include="Lora700.woff" />
+    <Content Include="Lora700.woff2" />
+    <Content Include="LoraItalic.woff" />
+    <Content Include="LoraItalic.woff2" />
     <None Include="Statics\site.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
