@@ -12,29 +12,29 @@ namespace HaagsVertaler.Controllers
       return View("Home", new TranslationViewModel());
     }
 
-    [HttpPost]
-    [Route("~/")]
-    public ActionResult IndexPost(TranslationViewModel vm)
-    {
-      if(!string.IsNullOrEmpty(vm.Source))
-        vm.Result = HaagsTranslator.Translator.Translate(vm.Source);
+    //[HttpPost]
+    //[Route("~/")]
+    //public ActionResult IndexPost(TranslationViewModel vm)
+    //{
+    //  if(!string.IsNullOrEmpty(vm.Source))
+    //    vm.Result = HaagsTranslator.Translator.Translate(vm.Source);
 
-      return View("Home", vm);
-    }
+    //  return View("Home", vm);
+    //}
 
-    [HttpGet]
-    [Route("~/api")]
-    public JsonResult TranslateApi(string text)
-    {
-      return new JsonNetResult
-      {
-        JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-        Data = new TranslationViewModel
-        {
-          Source = text,
-          Result = string.IsNullOrEmpty(text) ? null : HaagsTranslator.Translator.Translate(text)
-        }
-      };
-    }
+    //[HttpGet]
+    //[Route("~/api")]
+    //public JsonResult TranslateApi(string text)
+    //{
+    //  return new JsonNetResult
+    //  {
+    //    JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+    //    Data = new TranslationViewModel
+    //    {
+    //      Source = text,
+    //      Result = string.IsNullOrEmpty(text) ? null : HaagsTranslator.Translator.Translate(text)
+    //    }
+    //  };
+    //}
   }
 }
