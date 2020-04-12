@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Net
+<!DOCTYPE html>
 <html lang="nl">
 <head>
 	<title>Vertaal Nederlands naar het Haags</title>
@@ -49,7 +50,7 @@
 		}
 	</style>
 
-	<style>@Html.Raw(File.ReadAllText(Server.MapPath("site.min.css")));</style>
+	<style>@Html.Raw(System.IO.File.ReadAllText("wwwroot/site.min.css"));</style>
 </head>
 
 <body>
