@@ -6,7 +6,7 @@ namespace HaagsVertaler.Models
   {
     [MinLength(1)]
     [MaxLength(5000)]
-    public string Source { get; set; }
-    public string Result { get; set; }
+    public string? Source { get; set; }
+    public string? Result { get; set; }
   }
 }

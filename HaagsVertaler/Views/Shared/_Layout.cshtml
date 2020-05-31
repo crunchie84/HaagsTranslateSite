@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Net
+<!DOCTYPE html>
 <html lang="nl">
 <head>
 	<title>Vertaal Nederlands naar het Haags</title>
@@ -49,7 +50,7 @@
 		}
 	</style>
 
-	<style>@Html.Raw(File.ReadAllText(Server.MapPath("site.min.css")));</style>
+	<style>@Html.Raw(System.IO.File.ReadAllText("wwwroot/site.min.css"));</style>
 </head>
 
 <body>
@@ -80,7 +81,7 @@
 			</a>
 
 			<p>
-				Gemaakt door <a href="https://twitter.com/markvanstraten">@@markvanstraten</a> en <a href="https://twitter.com/roelfjandevries">@@roelfjandevries</a>.
+				Gemaakt door <a href="https://twitter.com/markvanstraten">@@markvanstraten</a> en <a href="https://twitter.com/roelfjandevries">@@roelfjandevries</a> (<a href="https://www.ad.nl/den-haag/deed-jij-mee-aan-het-haags-dictee-bekijk-hier-de-uitslag-en-de-winnaars~a3a90b8d/" target="_blank" rel="noopener">2e op het Haags dictee 2020</a>).
 			</p>
 		</footer>
 	</article>
@@ -102,6 +103,7 @@
 		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 		ga('create', 'UA-74264850-1', 'auto');
+		ga('set', 'anonymizeIp', true);
 		ga('send', 'pageview');
 
 	</script>
