@@ -9,7 +9,7 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          'site.min.css': 'Statics/site.less'
+          'wwwroot/site.min.css': 'Statics/site.less'
         }
       }
     },
