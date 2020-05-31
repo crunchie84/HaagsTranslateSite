@@ -1,5 +1,8 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,6 +20,7 @@ namespace HaagsVertaler
 
       public void ConfigureServices(IServiceCollection services)
       {
+          services.AddResponseCompression();
           services.AddRazorPages()
               .AddRazorRuntimeCompilation();
       }
@@ -34,7 +38,19 @@ namespace HaagsVertaler
           }
 
           app.UseHttpsRedirection();
-          app.UseStaticFiles();
+          app.UseStaticFiles(new StaticFileOptions()
+          {
+              HttpsCompression = Microsoft.AspNetCore.Http.Features.HttpsCompressionMode.Compress,               
+              OnPrepareResponse = (context) =>
+              {
+                  var headers = context.Context.Response.GetTypedHeaders();
+                  headers.CacheControl = new Microsoft.Net.Http.Headers.CacheControlHeaderValue
+                  {
+                      Public = true,
+                      MaxAge = TimeSpan.FromDays(365)
+                  };
+              }
+          });
 
           app.UseRouting();
 
