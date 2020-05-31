@@ -1,4 +1,9 @@
-﻿* {
+﻿.rem(@property; @sizeValue) {
+  @remSize: @sizeValue / 16;
+  @{property}: ~"@{remSize}rem";
+}
+
+* {
   box-sizing: border-box;
 }
 
@@ -33,20 +38,27 @@ figure img {
 
 h1 {
   margin: 0;
-  font-size: 30px;
+  .rem(font-size, 30);
+  .rem(line-height, 34);
   font-family: 'Lora';
 }
 
 h2 {
   font-family: 'Lora';
   margin-bottom: 5px;
-  font-size: 20px;
+  .rem(font-size, 20);
+  .rem(line-height, 22);
 }
 
 span {
   font-family: 'Lora';
   font-weight: 400;
   font-style: italic;
+  .rem(font-size, 16);
+  .rem(line-height, 18);
+  display: block;
+  .rem(margin-top, 10);
+  text-align: center;
 }
 
 p {
@@ -99,13 +111,13 @@ button {
   display: inline-block;
   outline: none;
   border: none;
-  font-size: 16px;
+  .rem(font-size, 16);
   vertical-align: baseline;
   background: #0D7E5D;
   color: #FFF;
   margin: 0 0 20px 0;
   padding: 0 20px;
-  line-height: 44px;
+  .rem(line-height, 44);
   font-style: normal;
   text-align: center;
   border-radius: 4px;
@@ -139,7 +151,8 @@ p a {
   text-align: left;
 
   h1 {
-    font-size: 18px;
+    .rem(font-size, 18);
+    .rem(line-height, 20);
     line-height: 1.4;
     margin-bottom: 0;
   }
@@ -158,7 +171,8 @@ footer {
   margin-top: 30px;
 
   p {
-    font-size: 14px;
+    .rem(font-size, 14);
+    .rem(line-height, 16);
     margin-top: 10px;
   }
 
