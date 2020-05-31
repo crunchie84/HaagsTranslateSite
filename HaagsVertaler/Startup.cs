@@ -1,10 +1,8 @@
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace HaagsVertaler
 {
@@ -19,7 +17,8 @@ namespace HaagsVertaler
 
       public void ConfigureServices(IServiceCollection services)
       {
-          services.AddRazorPages();
+          services.AddRazorPages()
+              .AddRazorRuntimeCompilation();
       }
 
       public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
