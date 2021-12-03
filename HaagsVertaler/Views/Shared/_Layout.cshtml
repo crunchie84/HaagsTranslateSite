@@ -96,6 +96,15 @@
 			textarea.value = '';
 			textarea.focus();
 		});
+
+		var kopieerTekst = document.querySelector('.js-kopieer-tekst');
+		if (kopieerTekst) {
+			kopieerTekst.addEventListener('click', function () {
+				var textarea = document.querySelector('.js-haags');
+				textarea.select();
+  			document.execCommand('copy')
+			});
+		}
 	</script>
 
 	<script>
