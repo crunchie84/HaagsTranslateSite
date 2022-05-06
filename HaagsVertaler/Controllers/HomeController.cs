@@ -1,6 +1,5 @@
 ﻿using HaagsVertaler.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace HaagsVertaler.Controllers
 {
