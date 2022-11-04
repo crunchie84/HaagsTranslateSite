@@ -1,6 +1,8 @@
-﻿.rem(@property; @sizeValue) {
-  @remSize: @sizeValue / 16;
-  @{property}: ~"@{remSize}rem";
+﻿@use "sass:math";
+
+@function rem($size) {  /* stylelint-disable-line at-rule-no-unknown */
+	$remSize: math.div($size, 16px);
+	@return #{$remSize}rem; /* stylelint-disable-line at-rule-no-unknown */
 }
 
 * {
@@ -28,7 +30,7 @@ figure {
 
 .logo-wrap {
   height: 0;
-  padding-bottom: 113 / 250 * 100%;
+  padding-bottom:  math.div(113, 250) * 100%;
 }
 
 figure img {
@@ -38,26 +40,26 @@ figure img {
 
 h1 {
   margin: 0;
-  .rem(font-size, 30);
-  .rem(line-height, 34);
+  font-size: rem(30px);
+  line-height: rem(34px);
   font-family: "Lora";
 }
 
 h2 {
   font-family: "Lora";
   margin-bottom: 5px;
-  .rem(font-size, 20);
-  .rem(line-height, 22);
+  font-size: rem(20px);
+  line-height: rem(22px);
 }
 
 span {
   font-family: "Lora";
   font-weight: 400;
   font-style: italic;
-  .rem(font-size, 16);
-  .rem(line-height, 18);
+  font-size: rem(16px);
+  line-height: rem(18px);
   display: block;
-  .rem(margin-top, 10);
+  margin-top: rem(10px);
   text-align: center;
 }
 
@@ -126,13 +128,13 @@ button {
   display: inline-block;
   outline: none;
   border: none;
-  .rem(font-size, 16);
+  font-size: rem(16px);
   vertical-align: baseline;
   background: #0d7e5d;
   color: #fff;
   margin: 0 0 20px 0;
   padding: 0 20px;
-  .rem(line-height, 44);
+  line-height: rem(44px);
   font-style: normal;
   text-align: center;
   border-radius: 4px;
@@ -165,8 +167,8 @@ p a {
   text-align: left;
 
   h1 {
-    .rem(font-size, 18);
-    .rem(line-height, 20);
+    font-size: rem(18px);
+    line-height: rem(20px);
     line-height: 1.4;
     margin-bottom: 0;
   }
@@ -185,8 +187,8 @@ footer {
   margin-top: 30px;
 
   p {
-    .rem(font-size, 14);
-    .rem(line-height, 16);
+    font-size: rem(14px);
+    line-height: rem(16px);
     margin-top: 10px;
   }
 
