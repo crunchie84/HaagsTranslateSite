@@ -92,22 +92,7 @@
 		</footer>
 	</article>
 
-	<script>
-		document.querySelector('.js-wis-tekst').addEventListener('click', function () {
-			var textarea = document.querySelector('.js-nederlands');
-			textarea.value = '';
-			textarea.focus();
-		});
-
-		var kopieerTekst = document.querySelector('.js-kopieer-tekst');
-		if (kopieerTekst) {
-			kopieerTekst.addEventListener('click', function () {
-				var textarea = document.querySelector('.js-haags');
-				textarea.select();
-  			document.execCommand('copy')
-			});
-		}
-	</script>
+	<script>@Html.Raw(System.IO.File.ReadAllText("wwwroot/site.js"));</script>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4L4JPR01EL"></script>
 	<script>

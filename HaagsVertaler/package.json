@@ -7,12 +7,17 @@
     "build": "parcel build"
   },
   "source": [
-    "./Statics/site.scss"
+    "./Statics/site.scss",
+    "./Statics/site.ts"
   ],
   "targets": {
     "default": {
       "distDir": "./wwwroot"
     }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
