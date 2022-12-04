@@ -34,13 +34,13 @@
 	<main class="wrapper">
 		<header>
 			<nav>
-				<a asp-controller="Home" asp-action="Index">Vertaler</a>
+				<a asp-controller="Home" asp-action="Index" class="@(ViewBag.Current == "Home" ? "active" : "")">Vertaler</a>
 				<figure>
 					<div class="logo-wrap">
 						<img src="logo.png" alt="Logo van Haagse vertaalmachine"/>
 					</div>
 				</figure>
-				<a asp-controller="About" asp-action="Index">Over</a>
+				<a asp-controller="About" asp-action="Index" class="@(ViewBag.Current == "Over" ? "active" : "")">Over</a>
 			</nav>
 		</header>
 
