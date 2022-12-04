@@ -1,0 +1,5 @@
+
+@function rem($size) {  /* stylelint-disable-line at-rule-no-unknown */
+	$remSize: math.div($size, 16px);
+	@return #{$remSize}rem; /* stylelint-disable-line at-rule-no-unknown */
+}

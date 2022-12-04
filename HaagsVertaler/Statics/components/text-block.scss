@@ -1,0 +1,28 @@
+@import "../mixins";
+
+.text-block {
+  text-align: left;
+  max-width: rem(800px);
+  margin: rem(36px) auto 0;
+  font-size: rem(20px);
+
+  @media (min-width: rem(760px)) {
+    margin-top: rem(72px);
+  }
+
+  h2 {
+    color: #0d7e5d;
+    font-size: rem(20px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+
+    @media (min-width: rem(760px)) {
+      font-size: rem(32px);
+    }
+  }
+
+
+  p + p {
+    margin-top: 22px;
+  }
+}

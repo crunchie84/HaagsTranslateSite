@@ -1,23 +1,28 @@
 ﻿@model HaagsVertaler.Models.TranslationViewModel
 
+<h1>Vertaal Nederlands naar het Haags</h1>
+<span>Vetaal Neidâhlans naah ut Haags</span>
+
 @using (Html.BeginForm())
 {
-	<div class="form-header">
-		<h2>Nederlands</h2>
-		<button type="button" class="js-wis-tekst">Wis tekst</button>
-	</div>
+	<section class="translate-sections">
+		<section class="nederlands-input">
+			<div class="form-header">
+				<h2>Nederlands</h2>	
+				<button type="button" class="js-wis-tekst">Wis tekst</button>
+			</div>
+				
+			@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true, @class = "js-nederlands", aria_label = "Nederlandse tekst" })
+		</section>
+		
+		<button type="submit" class="button">Vertaal!</button>
 
-	@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true, @class = "js-nederlands", aria_label = "Nederlandse tekst" })
-	<button type="submit" class="button">Naar Haags vertalen</button>
-
-
-	if (!string.IsNullOrEmpty(Model.Result))
-	{
-		<h2>De Haagse vertaling</h2>
-		<div class="haags-resultaat">
-			<textarea aria-label="Haagse tekst" class="js-haags">@Model.Result</textarea>
-			<button type="button" class="js-kopieer-tekst">Kopieer</button>
-		</div>
-	}
+		<section>
+			<h2>Haags</h2>
+			<div class="haags-resultaat">
+				<textarea aria-label="Haagse tekst" class="js-haags" readonly>@(string.IsNullOrEmpty(Model.Result)?"Ut Haags":Model.Result)</textarea> @* Intentionally without whitespace *@
+				<button type="button" class="js-kopieer-tekst">Kopieer</button>
+			</div>
+		</section>
+	</section>
 }
-

@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
 	<title>Vertaal Nederlands naar het Haags</title>
+	<meta charset="UTF-8" />
 	<meta name="description" content="Voor als je Nederlands naar het Haags wil vertalen, of gewoon Haags wil leren praten zoals Harry">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -22,76 +23,42 @@
 	
 	<meta name="google-site-verification" content="ICeZXJZ0LkkeH3YWAWozYkGNZ-l4RjfHmhwkPuVQtKU" />
 
-	<link rel="preload" href="/Lora700.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="/Lora400.woff2" as="font" type="font/woff2" crossorigin>
-
-	<style>
-		@@font-face {
-			font-family: 'Lora';
-			font-style: italic;
-			font-weight: 400;
-			font-display: swap;
-			src: url('/LoraItalic.woff2') format('woff2'), url('/LoraItalic.woff') format('woff');
-		}
-
-		@@font-face {
-			font-family: 'Lora';
-			font-style: normal;
-			font-weight: 700;
-			font-display: swap;
-			src: url('/Lora700.woff2') format('woff2'), url('/Lora700.woff') format('woff');
-		}
-
-		@@font-face {
-			font-family: 'Lato';
-			font-style: normal;
-			font-weight: 400;
-			font-display: swap;
-			src: url('/Lora400.woff2') format('woff2'), url('/Lora400.woff') format('woff');
-		}
-	</style>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@500;600;700;800&family=Rubik&display=swap" rel="stylesheet">
 
 	<style>@Html.Raw(System.IO.File.ReadAllText("wwwroot/site.css"));</style>
 </head>
 
 <body>
-	<article class="wrapper">
+	<main class="wrapper">
 		<header>
-			<figure>
-				<div class="logo-wrap">
-					<img src="logo.png" alt="Logo van Haagse vertaalmachine"/>
-				</div>
-			</figure>
-			<h1>Vertaal Nederlands naar het Haags</h1>
-			<span>Vetaal Neidâhlans naah ut Haags</span>
+			<nav>
+				<a asp-controller="Home" asp-action="Index">Vertaler</a>
+				<figure>
+					<div class="logo-wrap">
+						<img src="logo.png" alt="Logo van Haagse vertaalmachine"/>
+					</div>
+				</figure>
+				<a asp-controller="About" asp-action="Index">Over</a>
+			</nav>
 		</header>
 
 		@RenderBody()
 
-		<section class="totstandkoming">
-			<h1>Hoe is deze Haagse Vertaalmachine tot stand gekomen?</h1>
-			<p>
-				Speciaal voor de onthulling van het Haagse Harry-standbeeld op de Grote Markt ontwikkelde <a href="https://q42.nl/dh">Q42</a> uit Den Haag in 2016, voor de vorige versie van DenHaag.com, een automatische vertaler van het Nederlands naar het Haagse dialect.<br />
-				Met dank aan Robert-Jan Rueb en Sjaak Bral voor de spellingscontrole en support op deze Haagse vertaling.
-			</p>
-		</section>
+		
+	</main>
 
+	<footer>
 		<nav>
 			<a href="mailto:roelfjan@q42.nl">Suggesties?</a>
 		</nav>
-
-		<footer>
-			<a href="https://q42.nl">
-				<img src="https://logo.q42.com/q42-logo-black.svg" alt="Q42 logo" />
-			</a>
-
-			<p>
-				Gemaakt door <a href="https://twitter.com/markvanstraten">@@markvanstraten</a> en <a href="https://twitter.com/roelfjandevries">@@roelfjandevries</a> (<a href="https://www.ad.nl/den-haag/deed-jij-mee-aan-het-haags-dictee-bekijk-hier-de-uitslag-en-de-winnaars~a3a90b8d/" target="_blank" rel="noopener">2e op het Haags dictee 2020</a>).<br/><br />
-				Laatste update van vertaler: 04-11-2022
-			</p>
-		</footer>
-	</article>
-
+		<p>
+			<br/>
+			Laatste update van vertaler: 04-11-2022
+		</p>
+	</footer>
+	
 	<script>@Html.Raw(System.IO.File.ReadAllText("wwwroot/site.js"));</script>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4L4JPR01EL"></script>
