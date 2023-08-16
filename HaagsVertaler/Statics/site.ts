@@ -15,3 +15,15 @@ if (kopieerTekst) {
     document.execCommand('copy');
   });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const link = document.getElementById('haagsnl-link');
+
+  link?.addEventListener('click', function () {
+    // @ts-ignore
+    window.gtag('event', 'click', {
+      event_category: 'ads',
+      event_label: 'haagsnl-link',
+    });
+  });
+});

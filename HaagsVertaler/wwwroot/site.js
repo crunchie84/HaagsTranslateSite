@@ -1,16 +1,2 @@
-!(function () {
-  var e;
-  null === (e = document.querySelector('.js-wis-tekst')) ||
-    void 0 === e ||
-    e.addEventListener('click', () => {
-      const e = document.querySelector('.js-nederlands');
-      e && ((e.value = ''), e.focus());
-    });
-  const t = document.querySelector('.js-kopieer-tekst');
-  t &&
-    t.addEventListener('click', () => {
-      const e = document.querySelector('.js-haags');
-      null == e || e.select(), document.execCommand('copy');
-    });
-})();
+!function(){document.querySelector(".js-wis-tekst")?.addEventListener("click",(()=>{const e=document.querySelector(".js-nederlands");e&&(e.value="",e.focus())}));const e=document.querySelector(".js-kopieer-tekst");e&&e.addEventListener("click",(()=>{document.querySelector(".js-haags")?.select(),document.execCommand("copy")})),document.addEventListener("DOMContentLoaded",(function(){document.getElementById("haagsnl-link")?.addEventListener("click",(function(){window.gtag("event","click",{event_category:"ads",event_label:"haagsnl-link"})}))}))}();
 //# sourceMappingURL=site.js.map
