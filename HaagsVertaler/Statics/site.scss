@@ -291,11 +291,38 @@ p a {
   }
 }
 
+.ad-haagsnl-prefix {
+  font-size: 12px;
+  margin-bottom: 5px;
+  margin-top: rem(60px);
+  color: #4a4a4a;
+}
+
+.ad-haagsnl-link:hover {
+  .ad-haagsnl {
+    border-color: #c1a361;
+    transform: scale(1.05);
+  }
+}
+
+.ad-haagsnl {
+  margin-bottom: rem(60px);
+  width: 100%;
+  border: 4px solid #e5c272;
+  transition: all 0.15s ease;
+  border-radius: 10px;
+  overflow: hidden;
+
+  @media (min-width: rem(600px)) {
+    width: auto;
+    height: 150px;
+  }
+}
+
 footer {
+  padding: 0 15px 30px;
   flex-shrink: 0;
   text-align: center;
-  padding-bottom: 30px;
-  margin-top: 30px;
 
   p {
     font-size: rem(14px);
@@ -308,3 +335,4 @@ footer {
     font-weight: 500;
   }
 }
+
