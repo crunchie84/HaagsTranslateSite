@@ -1,6 +1,6 @@
-﻿@use "sass:math";
-@import "mixins";
-@import "components/text-block.scss";
+﻿@use 'sass:math';
+@import 'mixins';
+@import 'components/text-block.scss';
 
 * {
   box-sizing: border-box;
@@ -14,7 +14,8 @@
   --font-body: 'Rubik', sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -70,12 +71,12 @@ main {
     nav {
       display: flex;
       align-items: center;
-      
+
       a:first-child {
         margin-left: auto;
       }
 
-      a:last-child { 
+      a:last-child {
         margin-right: auto;
       }
     }
@@ -94,10 +95,9 @@ main {
   }
 }
 
-
 .logo-wrap {
   height: 0;
-  padding-bottom:  math.div(113, 250) * 100%;
+  padding-bottom: math.div(113, 250) * 100%;
 }
 
 figure img {
@@ -160,7 +160,7 @@ p {
   .button {
     margin-top: rem(20px);
     aspect-ratio: 2/1;
-    
+
     box-shadow: 0 0 2rem rgb(0 0 0 / 10%);
     margin-bottom: rem(50px);
   }
@@ -262,7 +262,7 @@ button {
   font-style: normal;
   text-align: center;
   border-radius: 20px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: rem(24px);
@@ -291,34 +291,6 @@ p a {
   }
 }
 
-.ad-haagsnl-prefix {
-  font-size: 12px;
-  margin-bottom: 5px;
-  margin-top: rem(60px);
-  color: #4a4a4a;
-}
-
-.ad-haagsnl-link:hover {
-  .ad-haagsnl {
-    border-color: #c1a361;
-    transform: scale(1.05);
-  }
-}
-
-.ad-haagsnl {
-  margin-bottom: rem(60px);
-  width: 100%;
-  border: 4px solid #e5c272;
-  transition: all 0.15s ease;
-  border-radius: 10px;
-  overflow: hidden;
-
-  @media (min-width: rem(600px)) {
-    width: auto;
-    height: 150px;
-  }
-}
-
 footer {
   padding: 0 15px 30px;
   flex-shrink: 0;
@@ -335,4 +307,3 @@ footer {
     font-weight: 500;
   }
 }
-
