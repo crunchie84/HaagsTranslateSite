@@ -1,0 +1,115 @@
+@import '../mixins';
+
+.extension-promo {
+  display: flex;
+  align-items: center;
+  gap: rem(24px);
+  text-align: left;
+
+  max-width: rem(800px);
+  margin: rem(72px) auto rem(36px);
+  padding: rem(18px) rem(20px);
+
+  background: var(--on-bg-color);
+  border-radius: rem(20px);
+  box-shadow: 0 0 1.5rem rgb(0 0 0 / 6%);
+
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 rem(6px) 2rem rgb(0 0 0 / 12%);
+
+    .extension-promo__cta {
+      background: #229c79;
+    }
+  }
+
+  @media (min-width: rem(760px)) {
+    margin-top: rem(72px);
+    padding: rem(20px) rem(24px);
+  }
+
+  &__icon {
+    margin-top: 0;
+    flex: 0 0 rem(56px);
+    width: rem(56px);
+    height: rem(56px);
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    margin-top: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  &__title {
+    margin-top: 0;
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: rem(20px);
+    line-height: 1.15;
+    margin-bottom: rem(2px);
+
+    @media (min-width: rem(760px)) {
+      font-size: rem(24px);
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 0;
+    font-size: rem(15px);
+    line-height: 1.35;
+    color: #3c4a46;
+
+    @media (min-width: rem(760px)) {
+      font-size: rem(16px);
+    }
+  }
+
+  &__cta {
+    margin-top: 0;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: rem(10px);
+    white-space: nowrap;
+
+    background: #0d7e5d;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: rem(18px);
+    line-height: 1;
+    border-radius: rem(14px);
+    padding: rem(14px) rem(20px);
+
+    svg {
+      flex: 0 0 rem(22px);
+      width: rem(22px);
+      height: rem(22px);
+    }
+  }
+
+  @media (max-width: rem(559px)) {
+    flex-wrap: wrap;
+
+    .extension-promo__cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

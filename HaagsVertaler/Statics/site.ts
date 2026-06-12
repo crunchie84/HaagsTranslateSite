@@ -26,4 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
       event_label: 'haagsnl-link',
     });
   });
+
+  const extensionLink = document.getElementById('chrome-extension-link');
+
+  extensionLink?.addEventListener('click', function () {
+    // @ts-ignore
+    window.gtag('event', 'click', {
+      event_category: 'ads',
+      event_label: 'chrome-extension',
+    });
+  });
 });

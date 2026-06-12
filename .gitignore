@@ -236,3 +236,6 @@ _Pvt_Extensions
 .fake/
 .idea
 HaagsVertaler/.parcel-cache
+
+# Superpowers brainstorm sessions
+.superpowers/
