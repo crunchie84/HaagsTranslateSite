@@ -1,0 +1,5 @@
+{
+  "auditsDir": "docs/audits",
+  "urls": ["/", "/over"],
+  "environments": { "production": "https://haags.nu" }
+}
