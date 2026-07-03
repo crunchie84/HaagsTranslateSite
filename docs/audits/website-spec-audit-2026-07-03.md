@@ -23,6 +23,8 @@ First audit — no previous report to compare against.
 
 ## 1. Foundations (20 items)
 
+_HTML, head, document basics._
+
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
 | [The HTML doctype](https://specification.website/spec/foundations/doctype/) | required | ✅ | `<!DOCTYPE html>` is line 1 on `/` and `/over` |
@@ -58,6 +60,8 @@ First audit — no previous report to compare against.
 
 ## 2. SEO (14 items)
 
+_Search visibility._
+
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
 | [Redirects (301/302/308)](https://specification.website/spec/seo/redirects/) | required | ⚠️ | Apex http→https is a clean 301, but www chains 3 hops (http://www → https://www → **http://**haags.nu → https://haags.nu) incl. an HTTPS→HTTP downgrade, and the www cert is expired |
@@ -84,6 +88,8 @@ First audit — no previous report to compare against.
 - **Duplicate URL variants without canonical (⚠️)**: `/over/` (trailing slash), `/OVER` (uppercase, IIS case-insensitive) and `/over?utm_source=x` all return 200 with identical content; no `rel=canonical` link on any page. `og:url` is hardcoded to `https://haags.nu` even on `/over`. Adding per-page canonicals (or 301ing variants) would consolidate signals.
 
 ## 3. Accessibility (25 items)
+
+_WCAG-aligned rules._
 
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
@@ -126,6 +132,8 @@ First audit — no previous report to compare against.
 
 ## 4. Security (17 items)
 
+_Headers, transport, policies._
+
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
 | [HTTPS and TLS](https://specification.website/spec/security/https-tls/) | required | ⚠️ | Apex OK: TLS 1.2+1.3, TLS 1.0/1.1 rejected, http→https 301. But https://www.haags.nu serves a cert that expired 2024-03-18, and http://www 301s into it. |
@@ -160,6 +168,8 @@ First audit — no previous report to compare against.
 
 ## 5. Well-Known URIs (10 items)
 
+_Standard /.well-known/ paths._
+
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
 | [Well-known URIs](https://specification.website/spec/well-known/well-known-overview/) | recommended | ⚠️ | No well-known URIs published at all; mechanically sound though — all `/.well-known/*` probes return real 404 (empty body, no soft-404), served over HTTPS, no auth wall |
@@ -179,6 +189,8 @@ First audit — no previous report to compare against.
 - **Well-known URIs overview (⚠️)**: the site publishes zero well-known URIs — all probed paths (including `security.txt`) return 404 with empty bodies. The handling itself is correct per RFC 8615 (no soft-404, HTTPS enforced), but nothing under `/.well-known/` is actually served.
 
 ## 6. Agent Readiness (20 items)
+
+_Discoverability by AI agents._
 
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
@@ -215,6 +227,8 @@ First audit — no previous report to compare against.
 - **Overview (⚠️)**: the strongest agent-readiness asset is that the site is fully SSR (complete HTML without JS) plus a clean JSON API; everything discovery-related is missing.
 
 ## 7. Performance (25 items)
+
+_Core Web Vitals, caching, fonts._
 
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
@@ -259,6 +273,8 @@ First audit — no previous report to compare against.
 
 ## 8. Privacy (6 items)
 
+_Consent and visitor choice._
+
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
 | [Privacy policy](https://specification.website/spec/privacy/privacy-policy/) | required | ❌ | No privacy policy exists: no link on `/` or `/over`; `/privacy`, `/privacy-policy`, `/privacybeleid`, `/cookies` all 404. One is needed since GA4 collects personal data. |
@@ -279,6 +295,8 @@ First audit — no previous report to compare against.
 
 ## 9. Resilience (6 items)
 
+_Graceful failure._
+
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |
 | [Custom error pages (404, 500)](https://specification.website/spec/resilience/error-pages/) | required | ❌ | 404 returns correct status but an empty body (`content-length: 0`) — no custom error page, no explanation or way forward; `server: Microsoft-IIS/10.0` header leaks platform info |
@@ -295,6 +313,8 @@ First audit — no previous report to compare against.
 - **Maintenance pages / 503 🔍 and Monitoring 🔍**: both depend on infrastructure/process not observable via HTTP while the site is healthy; no status-page URL or monitoring artefacts were discoverable from the deployed site.
 
 ## 10. Internationalisation (13 items)
+
+_Language, locale, direction._
 
 | Item | Status | Result | Notes |
 | --- | --- | --- | --- |

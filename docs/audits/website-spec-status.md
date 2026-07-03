@@ -1,45 +1,33 @@
 # Website Specification status
 
-Living status of haags.nu against [The Website Specification](https://specification.website) — all 156 items (36 `required`, 80 `recommended`, 35 `optional`, 5 `avoid`) in the spec's 10 categories. This file is overwritten on every audit run so that `git log -p` shows exactly which items changed between audits. Detailed findings, evidence, and prioritised fix lists live in the dated reports next to this file (latest: [2026-07-03](website-spec-audit-2026-07-03.md)).
-
-Update rules (for future audit runs):
-
-- Keep the canonical spec order and the exact table format; only change a row's Result/Notes when the underlying fact changed.
-- Keep notes terse and factual — no rewording for style, it pollutes the diff.
-- Staging-only signals (`noindex`, robots `Disallow: /`) are ⚠️ "staging policy", not ❌.
-- The Intentionally-ignored column and the 🚫 verdict are owned by the team, never by an audit run. An audit must not flip a 👤 row's Result; it may only append to the Notes if the item's facts changed (e.g. the skipped feature suddenly exists).
-- A clean ✅ gets an empty Notes cell; only write a note when it contains a remark (caveat, minor issue, follow-up hint).
+Living status of haags.nu against [The Website Specification](https://specification.website). This file is updated on every audit run so that git shows exactly which items changed between audits. Detailed findings, evidence, and prioritised fix lists live in the dated reports next to this file (latest: [2026-07-03](website-spec-audit-2026-07-03.md)).
 
 - **Last audited:** 2026-07-03
 - **Environment:** production — `https://haags.nu`
-
-Legend: ✅ pass · 🚫 deliberately not needed (team decision) · ⚠️ partial/caveat · ❌ fail · 🔍 manual check needed · — not applicable
-
-The **Intentionally ignored** column marks rows whose Result is a human decision instead of an audit finding: `👤 YYYY-MM-DD`, with the reason in Notes. That is how you find the exceptions later — every 🚫 must have an entry here, and it can also pin an accepted ⚠️. Audit runs never set, change, or remove these entries, and never change the Result of a 👤 row.
-
-Notes are only filled when there is a remark worth knowing; a clean ✅ carries no note.
-
-The difference between 🚫 and —: an item is — when it objectively doesn't apply (no login → no change-password endpoint); it is 🚫 when it does apply but the team decided not to implement it. 🚫 counts as handled in the score, so ❌ keeps meaning "gap" and the Open column stays an honest to-do list. For `avoid` items (anti-patterns) ✅ means the pattern is absent.
+- **Audited URLs:** `/` · `/over`
 
 ## Scoreboard
 
-Score = (✅ + 🚫) / applicable items (everything except —): how well we're doing. Open = ⚠️ + ❌ + 🔍: where action is needed (fix, improve, or verify). Recount from the tables after every update; don't edit by hand.
+Score = (✅ + 🚫) / applicable items.
+Legend: ✅ pass · ⚠️ partial · ❌ fail · 🔍 manual check needed · — not applicable · 🚫 intentionally skipped (team decision, `👤 date` in the Intentionally-ignored column)
 
-| Category | ✅ | 🚫 | ⚠️ | ❌ | 🔍 | — | Score | Open |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Foundations | 5 | 0 | 4 | 3 | 0 | 8 | 5/12 | 7 |
-| SEO | 5 | 0 | 2 | 3 | 0 | 4 | 5/10 | 5 |
-| Accessibility | 10 | 0 | 5 | 3 | 1 | 6 | 10/19 | 9 |
-| Security | 2 | 0 | 4 | 10 | 0 | 1 | 2/16 | 14 |
-| Well-Known URIs | 0 | 0 | 1 | 1 | 0 | 8 | 0/2 | 2 |
-| Agent Readiness | 1 | 0 | 3 | 13 | 0 | 3 | 1/17 | 16 |
-| Performance | 7 | 0 | 11 | 0 | 1 | 6 | 7/19 | 12 |
-| Privacy | 0 | 0 | 2 | 4 | 0 | 0 | 0/6 | 6 |
-| Resilience | 1 | 0 | 1 | 1 | 2 | 1 | 1/5 | 4 |
-| Internationalisation | 4 | 0 | 1 | 0 | 0 | 8 | 4/5 | 1 |
-| **Total** | **35** | **0** | **34** | **38** | **4** | **45** | **35/111** | **76** |
+| Category | ✅ | 🚫 | ⚠️ | ❌ | 🔍 | — | Score |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Foundations | 5 | 0 | 4 | 3 | 0 | 8 | 5/12 |
+| SEO | 5 | 0 | 2 | 3 | 0 | 4 | 5/10 |
+| Accessibility | 10 | 0 | 5 | 3 | 1 | 6 | 10/19 |
+| Security | 2 | 0 | 4 | 10 | 0 | 1 | 2/16 |
+| Well-Known URIs | 0 | 0 | 1 | 1 | 0 | 8 | 0/2 |
+| Agent Readiness | 1 | 0 | 3 | 13 | 0 | 3 | 1/17 |
+| Performance | 7 | 0 | 11 | 0 | 1 | 6 | 7/19 |
+| Privacy | 0 | 0 | 2 | 4 | 0 | 0 | 0/6 |
+| Resilience | 1 | 0 | 1 | 1 | 2 | 1 | 1/5 |
+| Internationalisation | 4 | 0 | 1 | 0 | 0 | 8 | 4/5 |
+| **Total** | **35** | **0** | **34** | **38** | **4** | **45** | **35/111** |
 
 ## 1. Foundations (20 items)
+
+_HTML, head, document basics._
 
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
@@ -66,6 +54,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 
 ## 2. SEO (14 items)
 
+_Search visibility._
+
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
 | [Redirects (301/302/308)](https://specification.website/spec/seo/redirects/) | required | ⚠️ |  | www chains 3 hops incl. HTTPS→HTTP downgrade; www cert expired |
@@ -84,6 +74,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 | [Soft 404s](https://specification.website/spec/seo/soft-404/) | avoid | ✅ |  | Missing pages return genuine 404 status (body empty — see resilience) |
 
 ## 3. Accessibility (25 items)
+
+_WCAG-aligned rules._
 
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
@@ -115,6 +107,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 
 ## 4. Security (17 items)
 
+_Headers, transport, policies._
+
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
 | [HTTPS and TLS](https://specification.website/spec/security/https-tls/) | required | ⚠️ |  | Apex OK (TLS 1.2/1.3); www cert expired 2024-03-18 and http://www 301s into it |
@@ -137,6 +131,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 
 ## 5. Well-Known URIs (10 items)
 
+_Standard /.well-known/ paths._
+
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
 | [Well-known URIs](https://specification.website/spec/well-known/well-known-overview/) | recommended | ⚠️ |  | Zero well-known URIs published; 404 handling itself is correct (no soft-404) |
@@ -151,6 +147,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 | [/.well-known/traffic-advice](https://specification.website/spec/well-known/traffic-advice/) | optional | — |  | Default prefetch behaviour acceptable |
 
 ## 6. Agent Readiness (20 items)
+
+_Discoverability by AI agents._
 
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
@@ -176,6 +174,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 | [Schemamap — discoverable JSON-LD endpoints per resource](https://specification.website/spec/agent-readiness/schemamap/) | optional | ❌ |  | `/schemamap.xml` → 404; no JSON-LD to index |
 
 ## 7. Performance (25 items)
+
+_Core Web Vitals, caching, fonts._
 
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
@@ -207,6 +207,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 
 ## 8. Privacy (6 items)
 
+_Consent and visitor choice._
+
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
 | [Privacy policy](https://specification.website/spec/privacy/privacy-policy/) | required | ❌ |  | No policy page or link anywhere; needed since GA4 collects personal data |
@@ -218,6 +220,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 
 ## 9. Resilience (6 items)
 
+_Graceful failure._
+
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
 | [Custom error pages (404, 500)](https://specification.website/spec/resilience/error-pages/) | required | ❌ |  | 404 status correct but body completely empty; `server: Microsoft-IIS/10.0` leaks platform |
@@ -228,6 +232,8 @@ Score = (✅ + 🚫) / applicable items (everything except —): how well we're 
 | [Offline support and service workers](https://specification.website/spec/resilience/offline-support/) | optional | — |  | No service worker; optional, not implemented |
 
 ## 10. Internationalisation (13 items)
+
+_Language, locale, direction._
 
 | Item | Status | Result | Intentionally ignored | Notes |
 | --- | --- | --- | --- | --- |
