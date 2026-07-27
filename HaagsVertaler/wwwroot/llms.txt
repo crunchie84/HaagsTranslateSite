@@ -2,7 +2,7 @@
 
 > Vertaal Nederlandse tekst naar het Haagse dialect, zoals gesproken door Harry uit Den Haag. De site biedt een webformulier, een JSON-API en een MCP-server zodat AI-agents de vertaling direct kunnen aanroepen.
 
-De vertaling is regelgebaseerd (geen LLM): Nederlands gaat erin, Haags komt eruit. Maximale invoerlengte is 5000 tekens.
+De vertaling is regelgebaseerd (geen LLM): Nederlands gaat erin, Haags komt eruit.
 
 ## MCP-server
 
@@ -10,7 +10,7 @@ Er is een Model Context Protocol (MCP) server beschikbaar, zodat AI-agents zoals
 
 - Endpoint: https://haags.nu/mcp (Streamable HTTP, stateless)
 - Tool: `vertaal_naar_haags` — parameter `tekst` (string, verplicht). Geeft de Haagse vertaling terug.
-- Server card: https://haags.nu/.well-known/mcp/server-card.json
+- Server card: https://haags.nu/mcp/server-card
 - Discovery (ARD-catalogus): https://haags.nu/.well-known/ai-catalog.json
 
 ## API
