@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "nu.haags/vertaler",
+  "title": "Haagse Vertaler",
+  "description": "Vertaalt Nederlandse tekst naar het Haagse dialect zoals Harry uit Den Haag praat.",
+  "version": "1.0.0",
+  "websiteUrl": "https://haags.nu/",
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/crunchie84/HaagsTranslateSite"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://haags.nu/mcp",
+      "supportedProtocolVersions": ["2024-11-05", "2025-03-26", "2025-06-18", "2025-11-25"]
+    }
+  ]
+}

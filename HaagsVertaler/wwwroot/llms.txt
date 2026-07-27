@@ -1,0 +1,23 @@
+# Haagse Vertaler
+
+> Vertaal Nederlandse tekst naar het Haagse dialect, zoals gesproken door Harry uit Den Haag. De site biedt een webformulier, een JSON-API en een MCP-server zodat AI-agents de vertaling direct kunnen aanroepen.
+
+De vertaling is regelgebaseerd (geen LLM): Nederlands gaat erin, Haags komt eruit.
+
+## MCP-server
+
+Er is een Model Context Protocol (MCP) server beschikbaar, zodat AI-agents zoals Claude en ChatGPT rechtstreeks kunnen laten vertalen zonder de website te scrapen.
+
+- Endpoint: https://haags.nu/mcp (Streamable HTTP, stateless)
+- Tool: `vertaal_naar_haags` — parameter `tekst` (string, verplicht). Geeft de Haagse vertaling terug.
+- Server card: https://haags.nu/mcp/server-card
+- Discovery (ARD-catalogus): https://haags.nu/.well-known/ai-catalog.json
+
+## API
+
+- [JSON-API](https://haags.nu/api?text=Ik+ga+naar+de+markt): `GET /api?text=<nederlandse tekst>` geeft `{ "source": "...", "result": "<haags>" }` terug.
+
+## Pagina's
+
+- [Vertaalmachine](https://haags.nu/): het webformulier om Nederlands naar Haags te vertalen.
+- [Over deze website](https://haags.nu/over): hoe de Haagse Vertaalmachine tot stand is gekomen.
