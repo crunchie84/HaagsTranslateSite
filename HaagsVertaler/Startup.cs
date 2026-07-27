@@ -2,7 +2,6 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +22,9 @@ namespace HaagsVertaler
           services.AddResponseCompression();
           services.AddRazorPages()
               .AddRazorRuntimeCompilation();
+          services.AddMcpServer()
+              .WithHttpTransport(options => options.Stateless = true)
+              .WithToolsFromAssembly();
       }
 
       public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -61,6 +63,7 @@ namespace HaagsVertaler
               endpoints.MapControllerRoute(
                   name: "default",
                   pattern: "{controller=Home}/{action=Index}/{id?}");
+              endpoints.MapMcp("/mcp");
           });
       }
   }
