@@ -1,0 +1,24 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Haags Vertaler",
+    "identifier": "did:web:haags.nu",
+    "documentationUrl": "https://haags.nu/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:haags.nu:mcp:vertaler",
+      "displayName": "Haagse Vertaler MCP",
+      "type": "application/mcp-server-card+json",
+      "url": "https://haags.nu/mcp/server-card",
+      "description": "Vertaalt Nederlandse tekst naar het Haagse dialect (zoals gesproken door Harry uit Den Haag).",
+      "capabilities": ["vertaal_naar_haags"],
+      "tags": ["haags", "den-haag", "dialect", "nederlands", "translation"],
+      "representativeQueries": [
+        "vertaal deze zin naar het Haags",
+        "hoe zeg je dit in Haags dialect",
+        "maak deze Nederlandse tekst Haags"
+      ]
+    }
+  ]
+}
