@@ -292,6 +292,25 @@ p a {
   }
 }
 
+.home-promos {
+  width: 100%;
+  max-width: rem(800px);
+  margin: rem(72px) auto rem(36px);
+  text-align: center;
+
+  .ad-haagsnl-prefix {
+    margin-top: 0;
+  }
+
+  .ad-haagsnl {
+    margin-bottom: rem(64px);
+  }
+
+  .extension-promo {
+    margin: 0;
+  }
+}
+
 .ad-haagsnl-prefix {
   font-size: 12px;
   margin-bottom: 5px;
@@ -309,6 +328,7 @@ p a {
 .ad-haagsnl {
   margin-bottom: rem(60px);
   width: 100%;
+  height: auto;
   border: 4px solid #e5c272;
   transition: all 0.15s ease;
   border-radius: 10px;
