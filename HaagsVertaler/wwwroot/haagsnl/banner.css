@@ -1,0 +1,142 @@
+.ad-haagsnl.haagsnl-banner {
+  --haagsnl-green: #2a9d6e;
+  --haagsnl-cream: #f7e87d;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: min(100%, 33.25rem);
+  height: auto;
+  aspect-ratio: 2811 / 792;
+  margin-left: auto;
+  margin-right: auto;
+  container-type: inline-size;
+  background: var(--haagsnl-green);
+  color: #fff;
+  text-decoration: none;
+}
+
+.haagsnl-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100px 100%, 20px 100%;
+  animation: haagsnl-drift 9s linear infinite;
+  pointer-events: none;
+}
+
+.haagsnl-banner span {
+  margin-top: 0;
+}
+
+.haagsnl-banner__copy,
+.haagsnl-banner__line {
+  font-family: Antonio, "Arial Narrow", Impact, sans-serif;
+  font-weight: 700;
+  line-height: 0.86;
+}
+
+.haagsnl-banner__mark,
+.haagsnl-banner__copy,
+.haagsnl-banner__harry {
+  position: relative;
+  z-index: 1;
+}
+
+.haagsnl-banner__mark {
+  height: 11.6cqw;
+  width: auto;
+  flex: 0 0 auto;
+  margin-left: 2.2cqw;
+  animation: haagsnl-pop 6.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.haagsnl-banner__copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.03em;
+  padding: 0 1cqw 0 0.6cqw;
+  color: #fff;
+  font-family: Antonio, "Arial Narrow", Impact, sans-serif;
+  font-size: 4.55cqw;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 0.86;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.haagsnl-banner__line {
+  display: block;
+  font-size: inherit;
+  white-space: nowrap;
+  animation: haagsnl-rise 6.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both;
+}
+
+.haagsnl-banner__line--1 { animation-delay: 0.12s; }
+.haagsnl-banner__line--2 { animation-delay: 0.28s; color: var(--haagsnl-cream); }
+.haagsnl-banner__line--3 { animation-delay: 0.44s; }
+
+.haagsnl-banner__harry {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0 2.1cqw 0 1.1cqw;
+  z-index: 2;
+  animation: haagsnl-bob 3.6s ease-in-out 1s infinite;
+}
+
+.haagsnl-banner__harry img {
+  height: 84%;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0.35cqw 0.15cqw rgba(18, 56, 40, 0.28));
+  animation: haagsnl-arrive 6.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s infinite both;
+}
+
+@keyframes haagsnl-drift {
+  to { background-position: 100px 0, 20px 0; }
+}
+
+@keyframes haagsnl-pop {
+  0% { opacity: 0; transform: scale(0.92); }
+  12% { opacity: 1; transform: none; }
+  82% { opacity: 1; transform: none; }
+  93%, 100% { opacity: 0; transform: scale(0.96); }
+}
+
+@keyframes haagsnl-rise {
+  0% { opacity: 0; transform: translateY(0.45em); }
+  12% { opacity: 1; transform: none; }
+  82% { opacity: 1; transform: none; }
+  93%, 100% { opacity: 0; transform: translateY(0.2em); }
+}
+
+@keyframes haagsnl-arrive {
+  0% { opacity: 0; transform: translateY(10%); }
+  14% { opacity: 1; transform: none; }
+  82% { opacity: 1; transform: none; }
+  93%, 100% { opacity: 0; transform: translateY(6%); }
+}
+
+@keyframes haagsnl-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.4%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .haagsnl-banner::before,
+  .haagsnl-banner__mark,
+  .haagsnl-banner__line,
+  .haagsnl-banner__harry,
+  .haagsnl-banner__harry img {
+    animation: none;
+  }
+}
