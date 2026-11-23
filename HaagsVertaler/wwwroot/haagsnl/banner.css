@@ -131,6 +131,59 @@
   50% { transform: translateY(-1.4%); }
 }
 
+.home-ad {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 47.49rem) {
+  .translate-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .translate-sections > section,
+  .home-ad {
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .home-ad { order: 2; }
+  .haags-output { order: 3; }
+
+  .translate-sections > .button {
+    margin-bottom: 1.25rem;
+  }
+
+  .home-ad .ad-haagsnl-prefix {
+    margin-top: 0;
+  }
+
+  .home-ad .ad-haagsnl {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 47.5rem) {
+  .translate-sections {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-areas: "nl button haags" "ad ad ad";
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nederlands-input { grid-area: nl; }
+  .translate-sections > .button { grid-area: button; }
+  .haags-output { grid-area: haags; }
+
+  .home-ad {
+    grid-area: ad;
+    margin-top: 2.5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .haagsnl-banner::before,
   .haagsnl-banner__mark,
