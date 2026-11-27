@@ -16,24 +16,33 @@
 				<button type="button" class="js-wis-tekst">Wis tekst</button>
 			</div>
 				
-			@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true, @class = "js-nederlands", aria_label = "Nederlandse tekst" })
+			@if (string.IsNullOrEmpty(Model.Result))
+			{
+				@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", autofocus = true, @class = "js-nederlands", aria_label = "Nederlandse tekst" })
+			}
+			else
+			{
+				@Html.TextAreaFor(f => f.Source, new { placeholder = "Het Nederlands", @class = "js-nederlands", aria_label = "Nederlandse tekst" })
+			}
 		</section>
 		
 		<button type="submit" class="button">Vertaal!</button>
 
-		<section>
+		<section class="haags-output"@(string.IsNullOrEmpty(Model.Result) ? null : " data-net-vertaald")>
 			<h2>Haags</h2>
 			<div class="haags-resultaat">
 				<textarea aria-label="Haagse tekst" class="js-haags" readonly>@(string.IsNullOrEmpty(Model.Result)?"Ut Haags":Model.Result)</textarea> @* Intentionally without whitespace *@
 				<button type="button" class="js-kopieer-tekst">Kopieer</button>
 			</div>
 		</section>
+
+		<div class="home-ad">
+			<partial name="_HaagsNlAd" />
+		</div>
 	</section>
 }
 
 <div class="home-promos">
-	<partial name="_HaagsNlAd" />
-
 	<a id="chrome-extension-link" class="extension-promo"
 	   href="https://chromewebstore.google.com/detail/haags-vertaler/fmofgebkdkkeffbnimglnlognlklfdlm"
 	   target="_blank" rel="noopener">
