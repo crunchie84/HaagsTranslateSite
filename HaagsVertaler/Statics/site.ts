@@ -16,6 +16,20 @@ if (kopieerTekst) {
   });
 }
 
+const vertaling = document.querySelector<HTMLElement>('.haags-output[data-net-vertaald]');
+const opMobiel = window.matchMedia('(max-width: 47.49rem)').matches;
+
+if (vertaling && opMobiel) {
+  const invoer = document.querySelector<HTMLTextAreaElement>('.js-nederlands');
+  invoer?.removeAttribute('autofocus');
+  if (document.activeElement === invoer) invoer.blur();
+
+  const rustig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(() => {
+    vertaling.scrollIntoView({ behavior: rustig ? 'auto' : 'smooth', block: 'start' });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const link = document.getElementById('haagsnl-link');
 

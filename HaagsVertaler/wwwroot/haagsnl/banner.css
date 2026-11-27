@@ -150,7 +150,10 @@
   }
 
   .home-ad { order: 2; }
-  .haags-output { order: 3; }
+  .haags-output {
+    order: 3;
+    scroll-margin-top: 1rem;
+  }
 
   .translate-sections > .button {
     margin-bottom: 1.25rem;
